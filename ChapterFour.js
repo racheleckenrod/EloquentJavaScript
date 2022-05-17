@@ -85,3 +85,49 @@
 // reverseArrayInPlace(arrayValue);
 // console.log(arrayValue);
 // // → [5, 4, 3, 2, 1]
+// PREP 
+// Parameters: takes in an array
+// Returns: new array with same elements, in reverse order
+// Exapmle: [a,b,c,d] => [d,c,b,a]
+// Pseudocode: if I am going to remove each element from the first array, then push it to the second, it will go on  the end, so I should pop d first, and add it to empty array, then pop c and add (push) it to new array, then pop b off, and add it, push it, to new array, then finally a will be left to add to the end of the second array. find the length and do this that many times.
+// could also do this with shift and unshift and I might need to do that.
+
+
+
+
+// function reverseArray(arr){
+//     // arr = []
+//     let newArr = []
+//     for(i = 0; i < arr.length;){
+//     let x
+//     x = arr.pop()
+//     newArr.push(x)
+
+//     }return newArr
+// }
+// console.log(reverseArray([8,7,6,5,4,3]))
+
+
+// function reverseArray(arr){
+//     // arr = []
+//     let newArr = []
+//     for(i = arr.length - 1; i >= 0; i--){
+
+//     newArr.push(arr[i])
+
+//     }return newArr
+// }
+// console.log(reverseArray([8,7,6,5,4,3]))
+
+function reverseArrayInPlace(array){
+    // let x
+    let y
+    for(let i = 0;i < Math.floor(array.length/2); i++){
+    // x = array[array.length - 1 - i] ;
+    y = array[i]
+    array[i] = array[array.length - 1 - i] 
+    array[array.length - 1 - i] = y
+
+        return array
+}
+}console.log(reverseArrayInPlace([8,7,6,5,4,3]))
